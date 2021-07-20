@@ -10,6 +10,11 @@
     <script src="components/message.js"></script>
     <script src="components/computed-prop.js"></script>
     <script src="components/methods.js"></script>
+    <script src="components/vmodel.js"></script>
+    <script src="components/vmodel-array.js"></script>
+    <script src="components/emit.js"></script>
+    <script src="components/parent-data.js"></script>
+    <script src="components/child-data.js"></script>
 </head>
 <body>
     
@@ -17,10 +22,32 @@
         <message></message>
         <computed-prop></computed-prop>
         <methods></methods>
+        <vmodel></vmodel>
+        <vmodel-array></vmodel-array>
+        <emit @show_marca_ropa="alertMarcaRopa"></emit>
+        <parent-data></parent-data>
+        <child-data ref="childData"></child-data>
+
     </div>
     <script>
         new Vue({
             el: '#app',
+            data(){
+                return {
+                    appName: 'Intro Vuejs'
+                }
+            },
+            mounted(){
+                console.log("Componente padre Montado!");
+                console.log(this);
+                console.log(this.$refs.childData.text);
+            },
+            methods: {
+                alertMarcaRopa(nombreMarca){
+                    //Hago peticion al API
+                    alert(nombreMarca);
+                }
+            }
         })
     </script>
 </body>
