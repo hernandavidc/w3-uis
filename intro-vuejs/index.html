@@ -15,6 +15,11 @@
     <script src="components/emit.js"></script>
     <script src="components/parent-data.js"></script>
     <script src="components/child-data.js"></script>
+    <script src="components/child-methods.js"></script>
+    <script src="components/ciclos.js"></script>
+    <script src="components/condicionales.js"></script>
+    <script src="components/layout.js"></script>
+    <script src="components/watcher.js"></script>
 </head>
 <body>
     
@@ -27,6 +32,19 @@
         <emit @show_marca_ropa="alertMarcaRopa"></emit>
         <parent-data></parent-data>
         <child-data ref="childData"></child-data>
+        <child-methods ref="childMethod"></child-methods>
+        <ciclo></ciclo>
+        <condicionales></condicionales>
+        <layout>
+            <p> Este es el contenido del main </p>
+            <template slot="header">
+                <h3> Slot header </h3>
+            </template>
+            <template slot="footer">
+                <h4> Elemento del slot footer</h4>
+            </template>
+        </layout>
+        <watcher></watcher>
 
     </div>
     <script>
@@ -41,6 +59,10 @@
                 console.log("Componente padre Montado!");
                 console.log(this);
                 console.log(this.$refs.childData.text);
+
+                setTimeout(() => {
+                    this.$refs.childMethod.showCmpName();
+                }, 3000);
             },
             methods: {
                 alertMarcaRopa(nombreMarca){
