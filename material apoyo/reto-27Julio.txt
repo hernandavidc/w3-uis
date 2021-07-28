@@ -1,0 +1,15 @@
+
+
+Se requiere complementar el codigo de ecommerce de tal forma que ahora cuenta con un Layout, donde se tenga el listado de 
+columnas en la seccion izquierda de la pantalla la cual debe ocupar 9 columnas y en la sección derecha un espacio para tener 
+el carrito, el cual debe ocupar 3 columnas de la grilla. 
+(Recordemos que la grilla de Bootstrap va a 12 columnas)
+
+Crear un modulo de Vuex que me modele el carrito de tal forma que cuenta con un estado, unas mutaciones y unos getters, 
+donde el estado contiene una variable tipo array llamada 'cart', sus mutaciones son 'addProduct' (donde si se agrega un producto a 
+mi lista 'Cart' se debe es incrementar su cantidad en 1 y no agregarlo de nuevo) 
+y 'removeProductFromCart' (el cual elimina el producto por completo, así tenga mas de 1 cantidad); 
+y sus getter contiene 'totalCost' que me devuelve el valor total.
+
+Y finalmente crear un componente de carrito que me permita listar todos los items que este contiene y su total.
+Datos de la tabala carrito ['name', 'qty', 'price', 'actions']
