@@ -8,3 +8,7 @@ https://randomuser.me/api/
 
 https://dev.to/marwan01/deploy-a-vue-js-app-to-heroku-30m
 https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+
+#Docker
+https://www.ionos.es/digitalguide/servidores/configuracion/tutorial-docker-instalacion-y-primeros-pasos/
+https://riptutorial.com/Download/docker-es.pdf
