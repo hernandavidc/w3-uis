@@ -1,3 +1,14 @@
 {
-  "todos": []
+  "todos": [
+    {
+      "id": 1,
+      "text": "Hacer el sprint 1",
+      "done": false
+    },
+    {
+      "id": 1627698853300,
+      "text": "Planear deploy integration/Sprint 1",
+      "done": false
+    }
+  ]
 }
