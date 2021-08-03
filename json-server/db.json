@@ -3,12 +3,22 @@
     {
       "id": 1,
       "text": "Hacer el sprint 1",
-      "done": false
+      "done": true
     },
     {
       "id": 1627698853300,
       "text": "Planear deploy integration/Sprint 1",
       "done": false
+    },
+    {
+      "id": 1627701905100,
+      "text": "Nuevo TODO",
+      "done": false
+    },
+    {
+      "id": 1627701910572,
+      "text": "Todo Listo",
+      "done": true
     }
   ]
 }
