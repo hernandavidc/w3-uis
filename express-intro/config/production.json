@@ -1,0 +1,7 @@
+{
+    "dbConfig": {
+        "host": "db-prod",
+        "port": 6798,
+        "dbName": "customers"
+    }
+}
