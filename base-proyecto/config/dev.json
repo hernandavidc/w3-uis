@@ -1,7 +1,7 @@
 {
     "dbConfig": {
-        "host": "mongodb://localhost",
-        "port": ":27017",
+        "host": "mongodb+srv://pruebaUser:123456asd@clusterbooks.tismx.mongodb.net",
+        "port": "",
         "dbName": "/customers"
     },
     "SECRETORPRIVATEKEY": "MiLlaveSecreta",

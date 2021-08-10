@@ -1,8 +1,8 @@
 {
     "dbConfig": {
-        "host": "mongodb+srv://<usrname>:<password>@namecluster.qf34t.mongodb.net/nameMyDb",
+        "host": "mongodb+srv://<usrname>:<password>@namecluster.qf34t.mongodb.net",
         "port": "",
-        "dbName": ""
+        "dbName": "/nameMyDb"
     },
     "SECRETORPRIVATEKEY": "MiLlaveSecreta",
     "PORT": 8080
