@@ -1,0 +1,27 @@
+URL: https://www.mongodb.com/cloud/atlas
+1. Login
+2. Create a cluster
+3. Create a cluster FREE
+4. Seleccionamos el servidor mas cercano (dejamos el valor por defecto, en general es AWS)
+5. Cluster Tier -> Basic Price, Free forever (512 MB)
+6. Change Cluster Name (Preferiblemente)
+7. Nos aseguramos que al final donde dice "Create Cluster" salga 'Free' en la misma fila
+---> Proceso automatico de creación - demora unos minutos 
+8. En el menu de la izquierda vamos a 'Security' -> Database Access
+9. A la derecha oprimimos Add new database user
+10. Authentication method en password
+11. Definimos username y constraseña (se puede autogenerar uno) -> es necesario guardar las credenciales pues se borran del formulaio al guardar
+12. Escribimos las credenciales en un fichero en nuestro equipo
+13. Database User Privileges: seleccionamos el valor por defecto: 'Read an write to any database'
+14. Pulsamos " Add user "
+---> Proceso automatico de creación de usuario - demora unos segudos
+
+15. Podemos conectarnos con nuestro gestor de Db como Compass
+16. En la ventana de los clusters damos en el boton "Connect" del cluster que queremos conectarnos
+17. Marcamos "Connect using MongoDb Compass"
+18. Cambiamos la versión del compass (revisamos con nuestro software)
+19. Copiamos la cadena de conección 
+20. Cambiamos los valores de username y password
+
+----> Configración para Prod
+21. Agregarmos la URL a nuestros ficheros de configracion en la carpeta /config
