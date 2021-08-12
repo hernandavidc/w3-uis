@@ -4,7 +4,10 @@ const mongoose = require('mongoose');
 const dbConnection = async () => {
     await mongoose.connect(`${ config.get('dbConfig.host') }${ config.get('dbConfig.port') }${ config.get('dbConfig.dbName') }`, {
             useNewUrlParser: true, 
-            useUnifiedTopology: true
+            useUnifiedTopology: true,
+            useCreateIndex: true,
+            useFindAndModify: false,
+            connectTimeoutMS: 5000
         })
         .then(() => console.log('Connected to mongoDB...'))
         .catch(err => { 

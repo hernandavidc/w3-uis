@@ -3,7 +3,7 @@ const { Router } = require('express');
 const { check } = require('express-validator');
 
 const { validateData } = require('../middlewares/validate-data');
-const { emailExists, isRolValid } = require('../helpers/db-validators');
+const { emailExists, isRolValid, userIdExists } = require('../helpers/req-validators');
 
 const { usuariosGet,
         usuariosPut,
@@ -13,10 +13,14 @@ const { usuariosGet,
 
 const router = Router();
 
-
 router.get('/', usuariosGet );
 
-router.put('/:id', usuariosPut );
+router.put('/:id', [
+    check('id', 'Id no valido').isMongoId(),
+    check('id').custom(userIdExists),
+    check('rol').custom(isRolValid),
+    validateData
+], usuariosPut );
 
 router.post('/', [
     check('name', 'El nombre es requerio').not().isEmpty(),
@@ -27,12 +31,8 @@ router.post('/', [
     validateData
 ], usuariosPost );
 
-router.delete('/', usuariosDelete );
+router.delete('/:id', usuariosDelete );
 
 router.patch('/', usuariosPatch );
-
-
-
-
 
 module.exports = router;
