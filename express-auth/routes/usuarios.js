@@ -2,7 +2,8 @@
 const { Router } = require('express');
 const { check } = require('express-validator');
 
-const { validateData } = require('../middlewares/validate-data');
+const { validateData, validateJWT, hasRol } = require('../middlewares');
+
 const { emailExists, isRolValid, userIdExists } = require('../helpers/req-validators');
 
 const { usuariosGet,
@@ -23,6 +24,8 @@ router.put('/:id', [
 ], usuariosPut );
 
 router.post('/', [
+    validateJWT,
+    hasRol('Admin', 'Seller'),
     check('name', 'El nombre es requerio').not().isEmpty(),
     check('password', 'La pass debe tener minimo 6 caracteres').isLength({ min: 6 }),
     check('email', 'El correo no es válido').isEmail(),
@@ -31,7 +34,13 @@ router.post('/', [
     validateData
 ], usuariosPost );
 
-router.delete('/:id', usuariosDelete );
+router.delete('/:id', [
+    validateJWT,
+    // isAdmin,
+    hasRol('Admin'),
+    check('id', 'Id no valido').isMongoId(),
+    check('id').custom(userIdExists),
+], usuariosDelete );
 
 router.patch('/', usuariosPatch );
 
