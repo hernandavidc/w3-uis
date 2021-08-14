@@ -1,3 +1,5 @@
+https://docs.google.com/presentation/d/1_ME8UnwqrV-Fed_EoNWOn-tCrLgLz91O9OyJedkA7oI/edit?usp=sharing
+
 # Links instalación MongoDb
 https://medium.com/@LondonAppBrewery/how-to-download-install-mongodb-on-windows-4ee4b3493514
 https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/
@@ -19,6 +21,11 @@ http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb2
 
 https://www.toptal.com/developers/gitignore
 
-
-#Metodos express-validator
+#Validadores de express-validator
 https://github.com/validatorjs/validator.js#validators
+
+#Deploy en Heroku
+https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up
+
+#Una Guia rapida y sencilla de hacer un deploy en AWS EC2, aún se puede aplicar mejores practicas:
+https://sumantmishra.medium.com/how-to-deploy-node-js-app-on-aws-with-github-db99758294f1

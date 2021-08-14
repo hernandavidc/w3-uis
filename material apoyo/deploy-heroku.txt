@@ -1,0 +1,28 @@
+//Antes de empezar revisamos que tengamos bien configurados nuestros apuntadores/configuraciones para la DB y recursos externos necesarios
+
+1. Heroku nos va a decir qué puerto va a utilizar nuestra aplicación, así que tenemos que asegurarnos 
+    de que ese es el puerto en el que el server esta escuchando. En nuestra modelo de Servidor, editamos 
+    el atributo donde controlamos el puerto:
+    ---> this.port = process.env.PORT || config.get('PORT');
+    // El valor por defecto que va poner/espera Heroku es de 5000, si tenemos problemas con el podemos hardcodearlo en nuestra rama de Heroku
+
+2. Especificar script de arranque
+    Tenemos que habilitarle a Heroku la instruccion necesaria para arrancar la aplicación, en nuestro package.json:
+    --->"scripts": {
+    --->    "start": "node app.js"
+    --->}
+    //De forma que Heroku va inicar nuestro proyecto como ' npm start '
+
+3. Especificar o asegurarnos que contamos con un .gitignore configurado para un proyecto node (así evitamos que nos cargue la carpeta de /nod_modules)
+4. Verificamos (instalamos) Heroku CLI
+5. Vamos al terminal y escribimos: heroku login
+6. Vamos hasta la carpeta del proyecto y escribimos: heroku create
+7. Copiamos el codigo del repo en Git
+8. Lo agregamos como repositorio remoto de Heroku a nuestro repositorio local: git remote add heroku https://git.heroku.com/url-url-60597.git
+9. Revisamos el nombre de nuestra rama principal con: git branch
+10. Dependiendo del nombre de la rama principal o la que vamos a hacer deploy: git push heroku nombreRama
+11. Heroku se encarga automaticamente de configurar e inicar nuetro proyecto
+12. Podemos ver el log de forma: heroku logs --tail
+
+Estimados la documentación de ellos al respecto de como hacer deploy tambien es muy amigable, incluso más que este documento de texto, por ello les dejo
+en link acá y en los links de interes: https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up
