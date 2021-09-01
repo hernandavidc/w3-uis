@@ -18,11 +18,11 @@ const Book = mongoose.model('Book', bookSchema);
 
 async function createBook(){
     const book = new Book({
-        name: "Orgullo y Prejuicio",
-        author: "Jane Austen",
+        name: "Antes de los tiempos oscuros",
+        author: "Un autor muy relevante",
         tags: ["Romantica", "Amor", "Colegio"],
-        price: 72000,
-        pages: 125,
+        price: 17200,
+        pages: 25,
         ISBN: "MXL-75413"
     });
     
@@ -43,24 +43,37 @@ async function listBooks(){
     //or 
     //and
     const numPage = 1;
-    const sizePage = 2;
-    // api/usuarios?numPage=2&sizePage=2
-    const books = await Book
+    const sizePage = 4;
+    // api/usuarios?numPage=2&sizePage=2&sort=-1&category=14&subcategory=254
+    // let querySort = {};
+    // if(req.query.sort){
+    //     querySort.name = req.query.sort
+    // }
+    let queryFind = {};
+    // if(req.query.category){
+    //     queryFind.category = req.query.category;
+    // }
+    // if(req.query.subcategory){
+    //     queryFind.subcategory = req.query.subcategory;
+    // }
+
+    let books = await Book
                             //.find({ pages: 250 });
                             // .find({ price: { $gt: 50000, $lte: 150000 } });
                             // .find({ price: { $in: [ 25000, 3000, 90000] } });
                             // .find()
                             // .and([{ name: "Cien años de soledad"}, { price: 50000 }]);
                             // .find({ author: /^Herni/ });
-                            // .find({ name: /.*de.* / });
-                            .find()
-                            .skip((numPage - 1) * sizePage)
-                            .limit(sizePage)
-                            .sort({ name: -1, author: -1 })
-                            .select({ name: 1, author: 1, tags: 1 });
+                            // .find({ name: /.*de.* / })
+                            .find(queryFind)
+                            // .skip((numPage - 1) * sizePage)
+                            // .limit(sizePage)
+                            // .sort(querySort)
+                            // .select({ name: 1, author: 1, tags: 1 });
+
      console.log(books);
 }
-// listBooks();
+listBooks();
 
 async function updateBook(id){
     const _book = await Book.findById(id);
@@ -91,4 +104,4 @@ async function deleteBook(id){
     console.log(result);
 }
 
-deleteBook('610c968413ce424a54128f06');
+// deleteBook('610c968413ce424a54128f06');

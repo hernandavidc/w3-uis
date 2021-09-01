@@ -11,7 +11,7 @@ class Server {
     constructor(){
         this.app = express();
         this.port = process.env.PORT || 5000;
-        this.userPath = "/api/users";
+        // this.userPath = "/api/users";
 
         this.middlewares();
         // this.routes();
